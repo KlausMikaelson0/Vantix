@@ -1,8 +1,8 @@
 'use client'
- 
+
 import { useState, useEffect } from 'react'
 import { Globe, Code, TrendingUp, Award, ShoppingBag, ExternalLink, X, Menu } from 'lucide-react'
- 
+
 interface Asset {
   id: string
   title: string
@@ -15,7 +15,7 @@ interface Asset {
   category: string
   categoryAr: string
 }
- 
+
 const initialAssets: Asset[] = [
   {
     id: '1',
@@ -138,7 +138,7 @@ const initialAssets: Asset[] = [
     categoryAr: 'المجوهرات'
   }
 ]
- 
+
 export default function VantixMarketplace() {
   const [language, setLanguage] = useState<'en' | 'ar'>('en')
   const [assets, setAssets] = useState<Asset[]>(initialAssets)
@@ -154,16 +154,16 @@ export default function VantixMarketplace() {
     budget: '',
     message: ''
   })
- 
+
   const isRTL = language === 'ar'
- 
+
   useEffect(() => {
     const savedAssets = localStorage.getItem('vantixAssets')
     if (savedAssets) {
       setAssets(JSON.parse(savedAssets))
     }
   }, [])
- 
+
   const content = {
     en: {
       nav: {
@@ -300,9 +300,9 @@ export default function VantixMarketplace() {
       }
     }
   }
- 
+
   const t = content[language]
- 
+
   const handleInquiry = (asset: Asset) => {
     setSelectedAsset(asset)
     setFormData({
@@ -311,7 +311,7 @@ export default function VantixMarketplace() {
     })
     setShowInquiryModal(true)
   }
- 
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     alert(t.inquiry.success)
@@ -326,7 +326,7 @@ export default function VantixMarketplace() {
       message: ''
     })
   }
- 
+
   const getFeatureIcon = (icon: string) => {
     switch(icon) {
       case 'code': return <Code className="w-8 h-8" />
@@ -336,7 +336,7 @@ export default function VantixMarketplace() {
       default: return <Code className="w-8 h-8" />
     }
   }
- 
+
   return (
     <div dir={isRTL ? 'rtl' : 'ltr'} className={isRTL ? 'font-tajawal' : ''}>
       {/* Navigation */}
@@ -347,21 +347,21 @@ export default function VantixMarketplace() {
             <div className="flex items-center">
               <h1 className="text-3xl font-playfair font-bold tracking-wider" style={{ color: 'var(--color-gold)' }}>
                 VANTIX
-              <h11>
-            <divv>
- 
+              </h1>
+            </div>
+
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-10">
               <a href="#portfolio" style={{ color: 'var(--color-text-primary)' }} className="hover:opacity-80 transition-opacity text-sm tracking-wide">
                 {t.nav.portfolio}
-              <aa>
+              </a>
               <a href="#features" style={{ color: 'var(--color-text-primary)' }} className="hover:opacity-80 transition-opacity text-sm tracking-wide">
                 {t.nav.features}
-              <aa>
+              </a>
               <a href="#contact" style={{ color: 'var(--color-text-primary)' }} className="hover:opacity-80 transition-opacity text-sm tracking-wide">
                 {t.nav.contact}
-              <aa>
- 
+              </a>
+              
               {/* Language Switcher */}
               <button
                 onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
@@ -372,9 +372,9 @@ export default function VantixMarketplace() {
                 className="px-6 py-2.5 rounded-md font-semibold hover:opacity-90 transition-all text-sm tracking-wide"
               >
                 {language === 'en' ? 'عربي' : 'English'}
-              <buttonn>
-            <divv>
- 
+              </button>
+            </div>
+
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -382,21 +382,21 @@ export default function VantixMarketplace() {
               style={{ color: 'var(--color-text-primary)' }}
             >
               <Menu className="w-7 h-7" />
-            <buttonn>
-          <divv>
- 
+            </button>
+          </div>
+
           {/* Mobile Menu */}
           {mobileMenuOpen && (
             <div className="md:hidden pt-6 pb-4 space-y-4">
               <a href="#portfolio" style={{ color: 'var(--color-text-primary)' }} className="block hover:opacity-80 transition-opacity">
                 {t.nav.portfolio}
-              <aa>
+              </a>
               <a href="#features" style={{ color: 'var(--color-text-primary)' }} className="block hover:opacity-80 transition-opacity">
                 {t.nav.features}
-              <aa>
+              </a>
               <a href="#contact" style={{ color: 'var(--color-text-primary)' }} className="block hover:opacity-80 transition-opacity">
                 {t.nav.contact}
-              <aa>
+              </a>
               <button
                 onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
                 style={{ 
@@ -406,12 +406,12 @@ export default function VantixMarketplace() {
                 className="w-full px-6 py-2.5 rounded-md font-semibold hover:opacity-90 transition-all"
               >
                 {language === 'en' ? 'عربي' : 'English'}
-              <buttonn>
-            <divv>
+              </button>
+            </div>
           )}
-        <divv>
-      <navv>
- 
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section style={{ backgroundColor: 'var(--color-luxury-black)' }} className="pt-40 pb-32 px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
@@ -420,13 +420,13 @@ export default function VantixMarketplace() {
             style={{ color: 'var(--color-text-primary)' }}
           >
             {t.hero.headline}
-          <h22>
+          </h2>
           <p 
             className="text-xl md:text-2xl mb-14 max-w-3xl mx-auto leading-relaxed"
             style={{ color: 'var(--color-text-secondary)' }}
           >
             {t.hero.subheadline}
-          <pp>
+          </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a
               href="#portfolio"
@@ -434,7 +434,7 @@ export default function VantixMarketplace() {
               className="px-10 py-4 rounded-md font-semibold hover:opacity-90 transition-all text-base tracking-wide shadow-lg"
             >
               {t.hero.cta}
-            <aa>
+            </a>
             <a
               href="#contact"
               style={{ 
@@ -444,11 +444,11 @@ export default function VantixMarketplace() {
               className="px-10 py-4 rounded-md font-semibold border-2 hover:opacity-80 transition-all text-base tracking-wide"
             >
               {t.hero.ctaSecondary}
-            <aa>
-          <divv>
-        <divv>
-      <sectionn>
- 
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section */}
       <section id="portfolio" style={{ backgroundColor: 'var(--color-charcoal)' }} className="py-32 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -458,15 +458,15 @@ export default function VantixMarketplace() {
               style={{ color: 'var(--color-gold)' }}
             >
               {t.portfolio.title}
-            <h33>
+            </h3>
             <p 
               className="text-lg md:text-xl max-w-2xl mx-auto"
               style={{ color: 'var(--color-text-secondary)' }}
             >
               {t.portfolio.subtitle}
-            <pp>
-          <divv>
- 
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {assets.map((asset) => (
               <div
@@ -486,36 +486,36 @@ export default function VantixMarketplace() {
                   >
                     <span style={{ color: 'var(--color-luxury-black)' }}>
                       {language === 'en' ? asset.category : asset.categoryAr}
-                    <spann>
-                  <divv>
-                <divv>
- 
+                    </span>
+                  </div>
+                </div>
+
                 <div className="p-8">
                   <h4 
                     className="text-2xl font-playfair font-bold mb-4"
                     style={{ color: 'var(--color-text-primary)' }}
                   >
                     {language === 'en' ? asset.title : asset.titleAr}
-                  <h44>
+                  </h4>
                   <p 
                     className="mb-6 leading-relaxed"
                     style={{ color: 'var(--color-text-secondary)' }}
                   >
                     {language === 'en' ? asset.description : asset.descriptionAr}
-                  <pp>
- 
+                  </p>
+                  
                   <div className="flex items-center justify-between mb-6 pb-6 border-b border-gray-700/50">
                     <span 
                       className="text-3xl font-bold"
                       style={{ color: 'var(--color-gold)' }}
                     >
                       {asset.price.toLocaleString()}
-                    <spann>
+                    </span>
                     <span style={{ color: 'var(--color-text-secondary)' }} className="text-sm">
                       {t.portfolio.sar}
-                    <spann>
-                  <divv>
- 
+                    </span>
+                  </div>
+
                   <div className="flex gap-4">
                     <a
                       href={asset.demoLink}
@@ -529,7 +529,7 @@ export default function VantixMarketplace() {
                     >
                       <ExternalLink className="w-4 h-4" />
                       {t.portfolio.viewDemo}
-                    <aa>
+                    </a>
                     <button
                       onClick={() => handleInquiry(asset)}
                       style={{ 
@@ -540,15 +540,15 @@ export default function VantixMarketplace() {
                     >
                       <ShoppingBag className="w-4 h-4" />
                       {t.portfolio.acquire}
-                    <buttonn>
-                  <divv>
-                <divv>
-              <divv>
+                    </button>
+                  </div>
+                </div>
+              </div>
             ))}
-          <divv>
-        <divv>
-      <sectionn>
- 
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="features" style={{ backgroundColor: 'var(--color-luxury-black)' }} className="py-32 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -558,15 +558,15 @@ export default function VantixMarketplace() {
               style={{ color: 'var(--color-text-primary)' }}
             >
               {t.features.title}
-            <h33>
+            </h3>
             <p 
               className="text-lg md:text-xl max-w-2xl mx-auto"
               style={{ color: 'var(--color-text-secondary)' }}
             >
               {t.features.subtitle}
-            <pp>
-          <divv>
- 
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {t.features.items.map((feature, index) => (
               <div
@@ -579,22 +579,22 @@ export default function VantixMarketplace() {
                   className="mb-6 flex justify-center"
                 >
                   {getFeatureIcon(feature.icon)}
-                <divv>
+                </div>
                 <h4 
                   className="text-xl font-bold mb-4"
                   style={{ color: 'var(--color-text-primary)' }}
                 >
                   {feature.title}
-                <h44>
+                </h4>
                 <p style={{ color: 'var(--color-text-secondary)' }} className="leading-relaxed">
                   {feature.description}
-                <pp>
-              <divv>
+                </p>
+              </div>
             ))}
-          <divv>
-        <divv>
-      <sectionn>
- 
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer style={{ backgroundColor: 'var(--color-charcoal)' }} className="py-16 px-6 lg:px-8 border-t border-gray-700/50">
         <div className="max-w-7xl mx-auto">
@@ -602,57 +602,57 @@ export default function VantixMarketplace() {
             <div>
               <h3 className="text-3xl font-playfair font-bold mb-4" style={{ color: 'var(--color-gold)' }}>
                 VANTIX
-              <h33>
+              </h3>
               <p style={{ color: 'var(--color-text-secondary)' }} className="leading-relaxed">
                 {t.footer.tagline}
-              <pp>
-            <divv>
- 
+              </p>
+            </div>
+            
             <div>
               <h4 className="text-lg font-bold mb-4" style={{ color: 'var(--color-text-primary)' }}>
                 {t.nav.portfolio}
-              <h44>
+              </h4>
               <ul className="space-y-3">
                 <li>
                   <a href="#portfolio" style={{ color: 'var(--color-text-secondary)' }} className="hover:opacity-80 transition-opacity">
                     {t.footer.portfolio}
-                  <aa>
-                <lii>
+                  </a>
+                </li>
                 <li>
                   <a href="#features" style={{ color: 'var(--color-text-secondary)' }} className="hover:opacity-80 transition-opacity">
                     {t.nav.features}
-                  <aa>
-                <lii>
-              <ull>
-            <divv>
- 
+                  </a>
+                </li>
+              </ul>
+            </div>
+
             <div>
               <h4 className="text-lg font-bold mb-4" style={{ color: 'var(--color-text-primary)' }}>
                 {t.footer.about}
-              <h44>
+              </h4>
               <ul className="space-y-3">
                 <li>
                   <a href="#" style={{ color: 'var(--color-text-secondary)' }} className="hover:opacity-80 transition-opacity">
                     {t.footer.terms}
-                  <aa>
-                <lii>
+                  </a>
+                </li>
                 <li>
                   <a href="#" style={{ color: 'var(--color-text-secondary)' }} className="hover:opacity-80 transition-opacity">
                     {t.footer.privacy}
-                  <aa>
-                <lii>
-              <ull>
-            <divv>
-          <divv>
- 
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <div className="pt-8 border-t border-gray-700/50 text-center">
             <p style={{ color: 'var(--color-text-secondary)' }}>
               © 2024 Vantix. {t.footer.rights}
-            <pp>
-          <divv>
-        <divv>
-      <footerr>
- 
+            </p>
+          </div>
+        </div>
+      </footer>
+
       {/* Inquiry Modal */}
       {showInquiryModal && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -666,20 +666,20 @@ export default function VantixMarketplace() {
               className="absolute top-6 right-6 hover:opacity-80 transition-opacity"
             >
               <X className="w-6 h-6" />
-            <buttonn>
- 
+            </button>
+
             <h3 
               className="text-3xl font-playfair font-bold mb-8"
               style={{ color: 'var(--color-gold)' }}
             >
               {t.inquiry.title}
-            <h33>
- 
+            </h3>
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label style={{ color: 'var(--color-text-primary)' }} className="block mb-2 font-semibold">
                   {t.inquiry.name}
-                <labell>
+                </label>
                 <input
                   type="text"
                   required
@@ -692,12 +692,12 @@ export default function VantixMarketplace() {
                   }}
                   className="w-full px-5 py-3 rounded-md border focus:outline-none focus:border-opacity-80 transition-all"
                 />
-              <divv>
- 
+              </div>
+
               <div>
                 <label style={{ color: 'var(--color-text-primary)' }} className="block mb-2 font-semibold">
                   {t.inquiry.email}
-                <labell>
+                </label>
                 <input
                   type="email"
                   required
@@ -710,12 +710,12 @@ export default function VantixMarketplace() {
                   }}
                   className="w-full px-5 py-3 rounded-md border focus:outline-none focus:border-opacity-80 transition-all"
                 />
-              <divv>
- 
+              </div>
+
               <div>
                 <label style={{ color: 'var(--color-text-primary)' }} className="block mb-2 font-semibold">
                   {t.inquiry.phone}
-                <labell>
+                </label>
                 <input
                   type="tel"
                   required
@@ -728,12 +728,12 @@ export default function VantixMarketplace() {
                   }}
                   className="w-full px-5 py-3 rounded-md border focus:outline-none focus:border-opacity-80 transition-all"
                 />
-              <divv>
- 
+              </div>
+
               <div>
                 <label style={{ color: 'var(--color-text-primary)' }} className="block mb-2 font-semibold">
                   {t.inquiry.company}
-                <labell>
+                </label>
                 <input
                   type="text"
                   value={formData.company}
@@ -745,12 +745,12 @@ export default function VantixMarketplace() {
                   }}
                   className="w-full px-5 py-3 rounded-md border focus:outline-none focus:border-opacity-80 transition-all"
                 />
-              <divv>
- 
+              </div>
+
               <div>
                 <label style={{ color: 'var(--color-text-primary)' }} className="block mb-2 font-semibold">
                   {t.inquiry.assetInterest}
-                <labell>
+                </label>
                 <input
                   type="text"
                   required
@@ -763,12 +763,12 @@ export default function VantixMarketplace() {
                   }}
                   className="w-full px-5 py-3 rounded-md border focus:outline-none focus:border-opacity-80 transition-all"
                 />
-              <divv>
- 
+              </div>
+
               <div>
                 <label style={{ color: 'var(--color-text-primary)' }} className="block mb-2 font-semibold">
                   {t.inquiry.budget}
-                <labell>
+                </label>
                 <select
                   required
                   value={formData.budget}
@@ -780,18 +780,18 @@ export default function VantixMarketplace() {
                   }}
                   className="w-full px-5 py-3 rounded-md border focus:outline-none focus:border-opacity-80 transition-all"
                 >
-                  <option value="">Select range<optionn>
-                  <option value="1000-5000">1,000 - 5,000 SAR<optionn>
-                  <option value="5000-10000">5,000 - 10,000 SAR<optionn>
-                  <option value="10000-15000">10,000 - 15,000 SAR<optionn>
-                  <option value="15000+">15,000+ SAR<optionn>
-                <selectt>
-              <divv>
- 
+                  <option value="">Select range</option>
+                  <option value="1000-5000">1,000 - 5,000 SAR</option>
+                  <option value="5000-10000">5,000 - 10,000 SAR</option>
+                  <option value="10000-15000">10,000 - 15,000 SAR</option>
+                  <option value="15000+">15,000+ SAR</option>
+                </select>
+              </div>
+
               <div>
                 <label style={{ color: 'var(--color-text-primary)' }} className="block mb-2 font-semibold">
                   {t.inquiry.message}
-                <labell>
+                </label>
                 <textarea
                   required
                   rows={5}
@@ -804,8 +804,8 @@ export default function VantixMarketplace() {
                   }}
                   className="w-full px-5 py-3 rounded-md border focus:outline-none focus:border-opacity-80 transition-all resize-none"
                 />
-              <divv>
- 
+              </div>
+
               <button
                 type="submit"
                 style={{ 
@@ -815,11 +815,11 @@ export default function VantixMarketplace() {
                 className="w-full px-8 py-4 rounded-md font-bold hover:opacity-90 transition-all text-lg"
               >
                 {t.inquiry.submit}
-              <buttonn>
-            <formm>
-          <divv>
-        <divv>
+              </button>
+            </form>
+          </div>
+        </div>
       )}
-    <divv>
+    </div>
   )
 }
