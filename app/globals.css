@@ -150,11 +150,11 @@ html {
   font-weight: 700;
 }
 
-[dir="rtl"] .flex {
-  flex-direction: row-reverse;
+[dir="rtl"] .grid {
+  direction: rtl;
 }
 
-[dir="rtl"] .grid {
+nav[dir="rtl"] {
   direction: rtl;
 }
 
