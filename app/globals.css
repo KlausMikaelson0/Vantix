@@ -2,16 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com');
+
 :root {
   --background: #0F172A;
   --gold: #F1C40F;
 }
 
 body {
-  background-color: var(--background);
+  background-color: #0F172A;
   color: #E2E8F0;
-  font-family: 'Tajawal', sans-serif;
-  overflow-x: hidden;
+  font-family: 'Inter', 'Tajawal', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.luxury-title {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.02em;
 }
 
 .gold-gradient {
@@ -23,11 +30,11 @@ body {
 .asset-card {
   background: #1E293B;
   border: 1px solid rgba(241, 196, 15, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .asset-card:hover {
   border-color: #F1C40F;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
