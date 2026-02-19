@@ -2,46 +2,39 @@ import React from 'react';
 
 export default function Home() {
   const assets = [
-    { title: "Royal Oud & Perfumes", price: "15,000 SAR", desc: "Ultra-premium oriental fragrance platform featuring rare oud collections." },
-    { title: "Titan Gaming Gear Hub", price: "8,500 SAR", desc: "Elite gaming equipment marketplace engineered for professional athletes." },
-    { title: "Artisan Coffee Roasters", price: "5,500 SAR", desc: "Premium specialty coffee platform designed for artisan roasters." }
+    { title: "متجر النخبة #1", desc: "وصف فخم ومختصر للمتجر الجاهز الذي ستعرضه هنا للبيع بملكية كاملة وأداء استثنائي." },
+    { title: "متجر النخبة #2", desc: "وصف فخم ومختصر للمتجر الجاهز الذي ستعرضه هنا للبيع بملكية كاملة وأداء استثنائي." },
+    { title: "متجر النخبة #3", desc: "وصف فخم ومختصر للمتجر الجاهز الذي ستعرضه هنا للبيع بملكية كاملة وأداء استثنائي." }
   ];
 
   return (
-    <main className="min-h-screen bg-[#0F172A] text-white">
-      <nav className="flex justify-between items-center px-10 py-8 max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold tracking-[0.2em] text-[#F1C40F] luxury-title">VANTIX</h1>
-        <button className="border border-[#F1C40F]/30 text-[#F1C40F] px-4 py-1 text-sm">AR / EN</button>
+    <main style={{ backgroundColor: '#0F172A', color: '#E2E8F0', minHeight: '100-screen', padding: '40px' }}>
+      {/* Header */}
+      <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '80px', maxWidth: '1200px', margin: '0 auto 80px' }}>
+        <h1 style={{ color: '#F1C40F', fontSize: '32px', fontWeight: 'bold', letterSpacing: '2px' }}>VANTIX</h1>
+        <div style={{ backgroundColor: '#F1C40F', color: '#0F172A', padding: '5px 15px', fontWeight: 'bold', borderRadius: '4px' }}>EN / AR</div>
       </nav>
 
-      <div className="text-center max-w-5xl mx-auto mt-24 mb-32 px-6">
-        <h2 className="text-6xl md:text-8xl luxury-title mb-8 font-bold">
-          Architecting Digital <span className="gold-gradient">Legacies</span>
-        </h2>
-        <p className="text-gray-400 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed">
-          We craft high-performance digital assets with 100% ownership and zero monthly fees.
-        </p>
-        <div className="flex flex-col md:flex-row gap-6 justify-center">
-          <button className="bg-[#F1C40F] text-[#0F172A] px-12 py-4 font-bold text-lg hover:scale-105 transition">Explore Assets</button>
-          <button className="border border-gray-700 px-12 py-4 font-bold text-lg hover:bg-white hover:text-black transition">Schedule Consultation</button>
+      {/* Hero Section */}
+      <div style={{ textAlign: 'center', marginBottom: '100px' }}>
+        <h2 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '20px' }}>هندسة الأصول الرقمية <span style={{ color: '#F1C40F' }}>بتميز مطلق</span></h2>
+        <p style={{ color: '#94A3B8', fontSize: '18px', maxWidth: '700px', margin: '0 auto 40px' }}>نبتكر منصات تجارة إلكترونية فاخرة بملكية كاملة وأداء استثنائي - دون أي رسوم اشتراك شهرية.</p>
+        <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+          <button style={{ backgroundColor: '#F1C40F', border: 'none', padding: '15px 35px', fontWeight: 'bold', cursor: 'pointer' }}>استكشف محفظة الأصول</button>
+          <button style={{ backgroundColor: 'transparent', border: '1px solid #475569', color: 'white', padding: '15px 35px', fontWeight: 'bold', cursor: 'pointer' }}>احجز استشارة حصرية</button>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-10 pb-32">
-        <h3 className="text-center text-gray-500 tracking-[0.4em] uppercase text-sm mb-16">Premium Asset Portfolio</h3>
-        <div className="grid md:grid-cols-3 gap-10">
-          {assets.map((asset, i) => (
-            <div key={i} className="asset-card p-10 rounded-sm">
-              <div className="text-[#F1C40F] text-xs mb-6 tracking-widest font-bold">ESTATE NO. 0{i+1}</div>
-              <h4 className="text-2xl luxury-title mb-4">{asset.title}</h4>
-              <p className="text-gray-500 text-sm mb-8 leading-relaxed">{asset.desc}</p>
-              <div className="flex justify-between items-center pt-6 border-t border-white/5">
-                <span className="font-bold">{asset.price}</span>
-                <button className="text-[#F1C40F] text-xs font-bold border-b border-[#F1C40F] pb-1">ACQUIRE NOW</button>
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* Assets Grid - هذا اللي بيخليها 3 أعمدة بجانب بعض */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', maxWidth: '1200px', margin: '0 auto' }}>
+        {assets.map((asset, i) => (
+          <div key={i} style={{ backgroundColor: '#1E293B', padding: '40px', border: '1px solid rgba(241, 196, 15, 0.1)', textAlign: 'right' }}>
+            <div style={{ color: '#F1C40F', fontSize: '12px', marginBottom: '15px', fontWeight: 'bold' }}>PREMIUM ASSET</div>
+            <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>{asset.title}</h3>
+            <p style={{ color: '#94A3B8', fontSize: '14px', lineHeight: '1.6', marginBottom: '30px' }}>{asset.desc}</p>
+            <button style={{ color: '#F1C40F', background: 'none', border: 'none', borderBottom: '1px solid #F1C40F', paddingBottom: '5px', cursor: 'pointer', fontWeight: 'bold' }}>ACQUIRE NOW</button>
+          </div>
+        ))}
       </div>
     </main>
   );
