@@ -2,17 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #0F172A; /* كحلي عميق */
-  color: #E2E8F0;
-  font-family: 'Inter', sans-serif;
+:root {
+  --background: #0F172A;
+  --gold: #F1C40F;
 }
 
-@layer components {
-  .btn-gold {
-    @apply bg-[#F1C40F] text-[#0F172A] px-6 py-3 font-bold transition-all hover:bg-white hover:scale-105;
-  }
-  .card-luxury {
-    @apply bg-[#1E293B] border border-[#F1C40F]/20 p-8 hover:border-[#F1C40F] transition-all;
-  }
+body {
+  background-color: var(--background);
+  color: #E2E8F0;
+  font-family: 'Tajawal', sans-serif;
+  overflow-x: hidden;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #F1C40F 0%, #C5A059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.asset-card {
+  background: #1E293B;
+  border: 1px solid rgba(241, 196, 15, 0.1);
+  transition: all 0.3s ease;
+}
+
+.asset-card:hover {
+  border-color: #F1C40F;
+  transform: translateY(-5px);
 }
