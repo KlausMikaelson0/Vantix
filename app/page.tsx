@@ -2,63 +2,48 @@ import React from 'react';
 
 export default function Home() {
   const assets = [
-    { title: "متجر النخبة #1", desc: "منصة تجارة إلكترونية متكاملة مصممة للنخبة، تتميز بأداء فائق وتصميم عصري يعكس فخامة براندك." },
-    { title: "متجر النخبة #2", desc: "أصل رقمي مجهز بالكامل، يجمع بين سهولة الاستخدام وقوة البرمجة الخاصة لضمان سيطرتك على السوق." },
-    { title: "متجر النخبة #3", desc: "استثمار تقني طويل الأمد بملكية كاملة، صُمم خصيصاً لمن يبحث عن التميز والابتعاد عن التكرار." }
+    { title: "Royal Oud & Perfumes", price: "15,000 SAR", desc: "Ultra-premium oriental fragrance platform featuring rare oud collections." },
+    { title: "Titan Gaming Gear Hub", price: "8,500 SAR", desc: "Elite gaming equipment marketplace engineered for professional athletes." },
+    { title: "Artisan Coffee Roasters", price: "5,500 SAR", desc: "Premium specialty coffee platform designed for artisan roasters." }
   ];
 
   return (
-    <main className="min-h-screen bg-[#0F172A] text-[#E2E8F0] px-6 py-12 md:px-20 md:py-16">
-      {/* الهيدر - Navbar */}
-      <nav className="max-w-7xl mx-auto flex justify-between items-center mb-24">
-        <h1 className="text-3xl font-bold tracking-widest text-[#F1C40F] font-serif">VANTIX</h1>
-        <div className="bg-[#F1C40F] text-[#0F172A] px-4 py-1 font-bold text-sm rounded transition hover:scale-105 cursor-pointer">
-          EN / AR
-        </div>
+    <main className="min-h-screen bg-[#0F172A] text-white px-6 md:px-20 py-12">
+      {/* Navigation */}
+      <nav className="flex justify-between items-center max-w-7xl mx-auto mb-20">
+        <h1 className="text-3xl font-bold tracking-[0.2em] text-[#F1C40F]">VANTIX</h1>
+        <div className="bg-[#F1C40F] text-[#0F172A] px-4 py-1 font-bold text-sm rounded">AR / EN</div>
       </nav>
 
-      {/* القسم الرئيسي - Hero Section */}
-      <div className="max-w-4xl mx-auto text-center mb-32">
+      {/* Hero Section */}
+      <div className="text-center max-w-4xl mx-auto mb-32">
         <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-          هندسة الأصول الرقمية <span className="text-[#F1C40F]">بتميز مطلق</span>
+          Architecting Digital <span className="text-[#F1C40F]">Legacies</span>
         </h2>
-        <p className="text-gray-400 text-xl md:text-2xl mb-12 leading-relaxed">
-          نبتكر منصات تجارة إلكترونية فاخرة بملكية كاملة وأداء استثنائي - دون أي رسوم اشتراك شهرية.
-        </p>
-        <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-          <button className="w-full md:w-auto bg-[#F1C40F] text-[#0F172A] px-10 py-4 font-bold text-lg hover:bg-white transition duration-300">
-            استكشف محفظة الأصول
-          </button>
-          <button className="w-full md:w-auto border border-gray-600 px-10 py-4 font-bold text-lg hover:bg-white hover:text-black transition duration-300">
-            احجز استشارة حصرية
-          </button>
+        <p className="text-gray-400 text-xl mb-12">We craft high-performance digital assets with 100% ownership and zero monthly fees.</p>
+        <div className="flex flex-col md:flex-row gap-4 justify-center">
+          <button className="bg-[#F1C40F] text-[#0F172A] px-10 py-4 font-bold hover:scale-105 transition">Explore Assets</button>
+          <button className="border border-gray-700 px-10 py-4 font-bold hover:bg-white hover:text-black transition">Schedule Consultation</button>
         </div>
       </div>
 
-      {/* شبكة المتاجر - The Grid (هنا السر في الترتيب) */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-        {assets.map((asset, i) => (
-          <div key={i} className="bg-[#1E293B] border border-[#F1C40F]/10 p-10 rounded-sm hover:border-[#F1C40F] transition duration-500 group">
-            <div className="text-[#F1C40F] text-xs font-bold tracking-widest mb-6 uppercase">
-              Premium Asset
+      {/* The Grid - الجزء الذي سيحول التصميم لـ 3 أعمدة */}
+      <div className="max-w-7xl mx-auto">
+        <h3 className="text-center text-gray-500 tracking-[0.3em] uppercase text-sm mb-16">Premium Asset Portfolio</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {assets.map((asset, i) => (
+            <div key={i} className="luxury-card p-10 rounded-sm">
+              <div className="text-[#F1C40F] text-xs font-bold tracking-widest mb-6 uppercase">Estate No. 0{i+1}</div>
+              <h4 className="text-2xl font-bold mb-4">{asset.title}</h4>
+              <p className="text-gray-500 text-sm leading-relaxed mb-10">{asset.desc}</p>
+              <div className="flex justify-between items-center pt-6 border-t border-white/5">
+                <span className="font-bold text-white">{asset.price}</span>
+                <button className="text-[#F1C40F] text-xs font-bold border-b border-[#F1C40F] pb-1 hover:text-white hover:border-white transition">ACQUIRE NOW</button>
+              </div>
             </div>
-            <h3 className="text-2xl font-bold mb-6 group-hover:text-[#F1C40F] transition">
-              {asset.title}
-            </h3>
-            <p className="text-gray-400 text-sm leading-loose mb-10 text-right">
-              {asset.desc}
-            </p>
-            <button className="text-[#F1C40F] font-bold border-b border-[#F1C40F] pb-1 hover:text-white hover:border-white transition">
-              ACQUIRE NOW
-            </button>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-
-      {/* الفوتر - Footer */}
-      <footer className="mt-40 text-center text-gray-600 text-xs tracking-widest uppercase">
-        Vantix Digital Architecture Lab © 2024
-      </footer>
     </main>
   );
 }
