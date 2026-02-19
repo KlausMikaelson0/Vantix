@@ -12,7 +12,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="flex justify-between items-center max-w-7xl mx-auto mb-20">
         <h1 className="text-3xl font-bold tracking-[0.2em] text-[#F1C40F]">VANTIX</h1>
-        <div className="bg-[#F1C40F] text-[#0F172A] px-4 py-1 font-bold text-sm rounded">AR / EN</div>
+        <div className="bg-[#F1C40F] text-[#0F172A] px-4 py-1 font-bold text-sm rounded cursor-pointer">AR / EN</div>
       </nav>
 
       {/* Hero Section */}
@@ -20,7 +20,7 @@ export default function Home() {
         <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
           Architecting Digital <span className="text-[#F1C40F]">Legacies</span>
         </h2>
-        <p className="text-gray-400 text-xl mb-12">We craft high-performance digital assets with 100% ownership and zero monthly fees.</p>
+        <p className="text-gray-400 text-xl mb-12 max-w-2xl mx-auto">We craft high-performance digital assets with 100% ownership and zero monthly fees.</p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
           <button className="bg-[#F1C40F] text-[#0F172A] px-10 py-4 font-bold hover:scale-105 transition">Explore Assets</button>
           <button className="border border-gray-700 px-10 py-4 font-bold hover:bg-white hover:text-black transition">Schedule Consultation</button>
