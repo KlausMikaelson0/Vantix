@@ -2,26 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #0F172A;
-  --gold: #F1C40F;
-}
+@import url('https://fonts.googleapis.com');
 
 body {
-  background-color: var(--background);
+  background-color: #0F172A;
   color: #E2E8F0;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+  font-family: 'Tajawal', sans-serif;
 }
 
-.luxury-card {
-  background: #1E293B;
-  border: 1px solid rgba(241, 196, 15, 0.1);
-  transition: all 0.4s ease;
-}
-
-.luxury-card:hover {
-  border-color: #F1C40F;
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-}
+.luxury-title { font-family: 'Playfair Display', serif; }
