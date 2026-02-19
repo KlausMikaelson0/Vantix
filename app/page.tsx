@@ -8,35 +8,39 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0F172A] text-white p-6 md:p-20">
+    <main style={{ backgroundColor: '#0F172A', color: '#E2E8F0', minHeight: '100vh', padding: '40px 20px', fontFamily: 'sans-serif' }}>
       {/* Header */}
-      <nav className="flex justify-between items-center max-w-7xl mx-auto mb-20">
-        <h1 className="text-4xl font-bold tracking-widest text-[#F1C40F]">VANTIX</h1>
-        <div className="bg-[#F1C40F] text-[#0F172A] px-4 py-1 font-bold text-sm">AR / EN</div>
+      <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '1200px', margin: '0 auto 80px' }}>
+        <h1 style={{ color: '#F1C40F', fontSize: '32px', fontWeight: 'bold', letterSpacing: '3px' }}>VANTIX</h1>
+        <div style={{ backgroundColor: '#F1C40F', color: '#0F172A', padding: '5px 15px', fontWeight: 'bold', borderRadius: '2px', fontSize: '14px' }}>AR / EN</div>
       </nav>
 
       {/* Hero Section */}
-      <div className="text-center max-w-4xl mx-auto mb-32">
-        <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">Architecting Digital <span className="text-[#F1C40F]">Legacies</span></h2>
-        <p className="text-gray-400 text-xl mb-12">We craft high-performance digital assets with 100% ownership and zero monthly fees.</p>
-        <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <button className="bg-[#F1C40F] text-[#0F172A] px-10 py-4 font-bold">Explore Assets</button>
-          <button className="border border-gray-700 px-10 py-4 font-bold hover:bg-white hover:text-black transition">Schedule Consultation</button>
+      <div style={{ textAlign: 'center', marginBottom: '100px' }}>
+        <h2 style={{ fontSize: '56px', fontWeight: 'bold', marginBottom: '20px', letterSpacing: '-1px' }}>
+          Architecting Digital <span style={{ color: '#F1C40F' }}>Legacies</span>
+        </h2>
+        <p style={{ color: '#94A3B8', fontSize: '20px', maxWidth: '700px', margin: '0 auto 40px', lineHeight: '1.6' }}>
+          We craft high-performance digital assets with 100% ownership and zero monthly fees.
+        </p>
+        <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+          <button style={{ backgroundColor: '#F1C40F', border: 'none', padding: '15px 40px', fontWeight: 'bold', cursor: 'pointer', fontSize: '16px' }}>Explore Assets</button>
+          <button style={{ backgroundColor: 'transparent', border: '1px solid #475569', color: 'white', padding: '15px 40px', fontWeight: 'bold', cursor: 'pointer', fontSize: '16px' }}>Schedule Consultation</button>
         </div>
       </div>
 
-      {/* Grid - هنا يتم توزيع المتاجر بجانب بعضها */}
-      <div className="max-w-7xl mx-auto">
-        <h3 className="text-center text-gray-500 tracking-[0.3em] uppercase text-sm mb-16">Premium Asset Portfolio</h3>
-        <div className="flex flex-col md:flex-row gap-8"> {/* استبدلنا Grid بـ Flexbox لضمان الترتيب الأفقي */}
+      {/* Assets Grid - هذا الجزء سيجبر المتاجر على الظهور بجانب بعضها */}
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <h3 style={{ textAlign: 'center', color: '#64748B', letterSpacing: '4px', textTransform: 'uppercase', fontSize: '14px', marginBottom: '50px' }}>Premium Asset Portfolio</h3>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '30px', justifyContent: 'center' }}>
           {assets.map((asset, i) => (
-            <div key={i} className="flex-1 bg-[#1E293B] border border-[#F1C40F]/10 p-10 rounded-sm hover:border-[#F1C40F] transition-all">
-              <div className="text-[#F1C40F] text-xs font-bold tracking-widest mb-6 uppercase">Estate No. 0{i+1}</div>
-              <h4 className="text-2xl font-bold mb-4">{asset.title}</h4>
-              <p className="text-gray-400 text-sm leading-relaxed mb-10 min-h-[60px]">{asset.desc}</p>
-              <div className="flex justify-between items-center pt-6 border-t border-white/5">
-                <span className="font-bold text-white">{asset.price}</span>
-                <button className="text-[#F1C40F] text-xs font-bold border-b border-[#F1C40F] pb-1 hover:text-white hover:border-white transition">ACQUIRE NOW</button>
+            <div key={i} style={{ flex: '1', minWidth: '300px', backgroundColor: '#1E293B', padding: '40px', border: '1px solid rgba(241, 196, 15, 0.1)', transition: '0.3s' }}>
+              <div style={{ color: '#F1C40F', fontSize: '12px', marginBottom: '20px', fontWeight: 'bold', letterSpacing: '2px' }}>ESTATE NO. 0{i+1}</div>
+              <h4 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '15px' }}>{asset.title}</h4>
+              <p style={{ color: '#94A3B8', fontSize: '14px', lineHeight: '1.7', marginBottom: '30px', minHeight: '70px' }}>{asset.desc}</p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                <span style={{ fontWeight: 'bold', fontSize: '18px' }}>{asset.price}</span>
+                <button style={{ color: '#F1C40F', background: 'none', border: 'none', borderBottom: '1px solid #F1C40F', paddingBottom: '3px', cursor: 'pointer', fontWeight: 'bold', fontSize: '12px', letterSpacing: '1px' }}>ACQUIRE NOW</button>
               </div>
             </div>
           ))}
